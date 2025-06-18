@@ -1,1 +1,64 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: Outfit;
+  src: url("/fonts/Outfit/Outfit-VariableFont_wght.ttf");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Playfair-Display;
+  src: url("/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Playfair-Display;
+  src: url("/fonts/Playfair_Display/PlayfairDisplay-Italic-VariableFont_wght.ttf");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@theme {
+  --color-customOrange: #febd2e;
+  --color-customBlue: #4e80ee;
+  --color-customWhite: #e5e7eb;
+  --color-customBlack: #0e1325;
+  --color-customGray: #394150;
+
+  --font-outfit: "Outfit", sans-serif;
+  --font-playfair: "Playfair-Display", sans;
+}
+
+@utility text-first-semibold {
+  @apply font-playfair text-2xl font-semibold;
+}
+
+@utility text-second-regular {
+  @apply font-outfit;
+}
+
+@utility text-second-medium {
+  @apply font-outfit font-medium;
+}
+
+@utility text-second-bold {
+  @apply font-outfit font-bold;
+}
+
+@utility text-third-regular {
+  @apply font-outfit text-sm;
+}
+
+@utility text-third-bold {
+  @apply font-outfit text-sm font-bold;
+}
+
+@utility text-forth-semibold {
+  @apply font-outfit font-semibold text-xs;
+}
