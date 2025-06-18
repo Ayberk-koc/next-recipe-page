@@ -1,9 +1,20 @@
+import Categorys from "@/components/Categorys";
+import Hero from "@/components/Hero";
+import Meals from "@/components/Meals";
+
 export default function Home() {
   return (
     <>
-      <h1 className="text-first-semibold">
-        Whereas disregard and contempt fdor human rights have resulted
-      </h1>
+      <section id="hero" className="p-3">
+        <Hero></Hero>
+      </section>
+      <section
+        id="main"
+        className="px-3 md:px-10 lg:px-18 flex flex-col lg:flex-row gap-8 mt-5 pb-20"
+      >
+        <Categorys></Categorys>
+        <Meals></Meals>
+      </section>
     </>
   );
 }
