@@ -1,110 +1,84 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export default async function MealPage({
-  params,
-}: {
-  params: Promise<{ mealSlug: string }>;
-}) {
-  const { mealSlug } = await params;
+//Mache unten suspense und error-boundary hin!
+
+function MealInstruction({ mealSlug }: { mealSlug: string }) {
   return (
-    <section id="meal page" className="px-10 md:px-20 pt-8 pb-40">
-      <div className="flex flex-col">
-        <div className="flex flex-col max-w-6xl w-full mx-auto items-center justify-between space-y-2 md:space-y-0 md:flex-row md:items-stretch">
-          <Image
-            alt=""
-            height={100}
-            width={100}
-            src={"/images/logo-light.svg"}
-          ></Image>
-          <button className="px-6 py-3 pb-2 rounded-full bg-customWhite">
-            <span className="inline-flex gap-2 items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path d="M15 6L9 12L15 18" stroke="#0E1325" strokeWidth="2" />
-              </svg>
-              <span className="text-second-bold">Back to categories</span>
-            </span>
-          </button>
-        </div>
-        <div className="mt-14 max-w-4xl mx-auto flex flex-col items-start">
-          <div className="bg-[url('/images/test-food-img.png')] bg-center bg-cover bg-no-repeat overflow-hidden h-[400px] self-stretch mb-8"></div>
-          <h1 className="text-first-semibold text-customWhite mb-5">
-            Battenberg Cake
-          </h1>
-          <p className="flex flex-col md:flex-row gap-3 mb-10">
-            <button className="py-2 px-6 rounded-full bg-customGray text-customWhite">
-              category: <span className="text-second-bold ">Desert</span>
-            </button>
-            <button className="py-2 px-6 rounded-full bg-customGray text-customWhite">
-              area: <span className="text-second-bold">British</span>
-            </button>
-          </p>
+    <div className="mt-14 max-w-4xl mx-auto flex flex-col items-start">
+      <div className="bg-[url('/images/test-food-img.png')] bg-center bg-cover bg-no-repeat overflow-hidden h-[400px] self-stretch mb-8"></div>
+      <h1 className="text-first-semibold text-customWhite mb-5">
+        Battenberg Cake
+      </h1>
+      <p className="flex flex-col md:flex-row gap-3 mb-10">
+        <button className="py-2 px-6 rounded-full bg-customGray text-customWhite">
+          category: <span className="text-second-bold ">Desert</span>
+        </button>
+        <button className="py-2 px-6 rounded-full bg-customGray text-customWhite">
+          area: <span className="text-second-bold">British</span>
+        </button>
+      </p>
 
-          <p className="mb-4 flex items-center text-second-bold text-customWhite">
-            <span className="inline-block h-[32px] w-[16px] bg-customOrange mr-3 rounded-full"></span>
-            <span>Ingredients</span>
-          </p>
-          <ul className="flex flex-col gap-3 text-customWhite mb-10">
-            <li className="flex items-center">
-              <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
-              <span className="text-second-bold">175g Butter</span>
-            </li>
-            <li className="flex items-center">
-              <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
-              <span className="text-second-bold">175g Butter</span>
-            </li>
-            <li className="flex items-center">
-              <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
-              <span className="text-second-bold">175g Butter</span>
-            </li>
-            <li className="flex items-center">
-              <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
-              <span className="text-second-bold">175g Butter</span>
-            </li>
-            <li className="flex items-center">
-              <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
-              <span className="text-second-bold">175g Butter</span>
-            </li>
-            <li className="flex items-center">
-              <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
-              <span className="text-second-bold">175g Butter</span>
-            </li>
-            <li className="flex items-center">
-              <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
-              <span className="text-second-bold">175g Butter</span>
-            </li>
-            <li className="flex items-center">
-              <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
-              <span className="text-second-bold">175g Butter</span>
-            </li>
-            <li className="flex items-center">
-              <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
-              <span className="text-second-bold">175g Butter</span>
-            </li>
-            <li className="flex items-center">
-              <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
-              <span className="text-second-bold">175g Butter</span>
-            </li>
-            <li className="flex items-center">
-              <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
-              <span className="text-second-bold">175g Butter</span>
-            </li>
-            <li className="flex items-center">
-              <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
-              <span className="text-second-bold">175g Butter</span>
-            </li>
-          </ul>
-          <p className="mb-4 flex items-center text-second-bold text-customWhite">
-            <span className="inline-block h-[32px] w-[16px] bg-customBlue mr-3 rounded-full"></span>
-            <span>Instructions</span>
-          </p>
-          <p className="text-customWhite text-second-medium">
-            {`Heat oven to 180C/160C fan/gas 4 and line the base and sides of a
+      <p className="mb-4 flex items-center text-second-bold text-customWhite">
+        <span className="inline-block h-[32px] w-[16px] bg-customOrange mr-3 rounded-full"></span>
+        <span>Ingredients</span>
+      </p>
+      <ul className="flex flex-col gap-3 text-customWhite mb-10">
+        <li className="flex items-center">
+          <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
+          <span className="text-second-bold">175g Butter</span>
+        </li>
+        <li className="flex items-center">
+          <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
+          <span className="text-second-bold">175g Butter</span>
+        </li>
+        <li className="flex items-center">
+          <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
+          <span className="text-second-bold">175g Butter</span>
+        </li>
+        <li className="flex items-center">
+          <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
+          <span className="text-second-bold">175g Butter</span>
+        </li>
+        <li className="flex items-center">
+          <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
+          <span className="text-second-bold">175g Butter</span>
+        </li>
+        <li className="flex items-center">
+          <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
+          <span className="text-second-bold">175g Butter</span>
+        </li>
+        <li className="flex items-center">
+          <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
+          <span className="text-second-bold">175g Butter</span>
+        </li>
+        <li className="flex items-center">
+          <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
+          <span className="text-second-bold">175g Butter</span>
+        </li>
+        <li className="flex items-center">
+          <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
+          <span className="text-second-bold">175g Butter</span>
+        </li>
+        <li className="flex items-center">
+          <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
+          <span className="text-second-bold">175g Butter</span>
+        </li>
+        <li className="flex items-center">
+          <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
+          <span className="text-second-bold">175g Butter</span>
+        </li>
+        <li className="flex items-center">
+          <span className="inline-block h-1.5 w-1.5 rounded-full mr-2 bg-customWhite"></span>
+          <span className="text-second-bold">175g Butter</span>
+        </li>
+      </ul>
+      <p className="mb-4 flex items-center text-second-bold text-customWhite">
+        <span className="inline-block h-[32px] w-[16px] bg-customBlue mr-3 rounded-full"></span>
+        <span>Instructions</span>
+      </p>
+      <p className="text-customWhite text-second-medium">
+        {`Heat oven to 180C/160C fan/gas 4 and line the base and sides of a
             20cm square tin with baking parchment the easiest way is to cross 2
             x 20cm-long strips over the base. To make the almond sponge, put the
             butter, sugar, flour, ground almonds, baking powder, eggs, vanilla
@@ -139,8 +113,51 @@ export default async function MealPage({
             prongs of a fork. Assemble second Battenberg and keep in an airtight
             box or well wrapped in cling film for up to 3 days. Can be frozen
             for up to a month.`}
-          </p>
+      </p>
+    </div>
+  );
+}
+
+export default async function MealPage({
+  params,
+}: {
+  params: Promise<{ mealSlug: string }>;
+}) {
+  const { mealSlug } = await params;
+
+  console.log(mealSlug);
+  return (
+    <section id="meal page" className="px-10 md:px-20 pt-8 pb-40">
+      <div className="flex flex-col">
+        <div className="flex flex-col max-w-6xl w-full mx-auto items-center justify-between space-y-2 md:space-y-0 md:flex-row md:items-stretch">
+          <Link href={"/"}>
+            <Image
+              alt=""
+              height={100}
+              width={100}
+              src={"/images/logo-light.svg"}
+              className="cursor-pointer"
+            ></Image>
+          </Link>
+          <Link href={"/"}>
+            <button className="px-6 py-3 pb-2 rounded-full bg-customWhite hover:ring-2 ring-customOrange cursor-pointer">
+              <span className="inline-flex gap-2 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path d="M15 6L9 12L15 18" stroke="#0E1325" strokeWidth="2" />
+                </svg>
+                <span className="text-second-bold">Back to categories</span>
+              </span>
+            </button>
+          </Link>
         </div>
+        {/* Hier mache suspense und error-boundary hin! */}
+        <MealInstruction mealSlug={"tets"}></MealInstruction>
       </div>
     </section>
   );

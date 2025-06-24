@@ -18,11 +18,11 @@ export default function SearchBar() {
           />
         </svg>
         <input
-          className="placeholder:text-customWhite placeholder:text-second-regular w-full py-3 focus:outline-none"
+          className="text-customWhite placeholder:text-second-regular w-full py-3 focus:outline-none"
           placeholder="Search recipes"
         ></input>
       </div>
-      <button className="shrink-0 rounded-full w-[181px] h-[48px] bg-customWhite px-6 py-3">
+      <button className="shrink-0 rounded-full w-[181px] h-[48px] bg-customWhite px-6 py-3 cursor-pointer hover:ring-2 ring-customOrange transition ease-in-out">
         <div className="flex gap-2 items-center">
           <p className="shrink-0">
             Sort by: <span className="font-bold">Name</span>

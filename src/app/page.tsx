@@ -1,3 +1,5 @@
+"use client";
+
 import Categorys from "@/components/Categorys";
 import Hero from "@/components/Hero";
 import Meals from "@/components/Meals";
