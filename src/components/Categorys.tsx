@@ -24,8 +24,8 @@ export default function Categorys() {
 
   return (
     <div className="flex flex-col space-y-10">
-      <h1 className="text-first-semibold text-customWhite">Categories</h1>
-      <div className="flex flex-col space-y-3">
+      <h1 className="text-first-semibold text-customWhite px-1">Categories</h1>
+      <div className="grid grid-cols-1 min-[455px]:grid-cols-2 gap-3 lg:grid-cols-1 max-h-80 overflow-y-auto scroll-smooth px-1 py-1">
         {isLoading && (
           <LineSpinner size="40" stroke="4" speed="1" color="white" />
         )}
