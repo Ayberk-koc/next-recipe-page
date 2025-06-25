@@ -65,5 +65,5 @@ export interface MealFull {
   strSource: string | null;
   strImageSource: string | null;
   strCreativeCommonsConfirmed: string | null;
-  dateModified: any;
+  dateModified: string | null;
 }

@@ -5,9 +5,14 @@ import { ReactNode, useContext, useState } from "react";
 
 import { createContext } from "react";
 
-const CategoryContextObj = createContext({
+type CategoryContextType = {
+  category: string;
+  changeCategory: (value: string) => void;
+};
+
+const CategoryContextObj = createContext<CategoryContextType>({
   category: "Beef",
-  changeCategory: (value: string) => {},
+  changeCategory: () => {},
 });
 
 export function useCategoryContext() {
